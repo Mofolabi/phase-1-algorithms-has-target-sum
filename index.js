@@ -32,3 +32,14 @@ if (require.main === module) {
 }
 
 module.exports = hasTargetSum;
+
+function hasTargetSum(nums, target) {
+  let set = new Set();
+  for (let i = 0; i < nums.length; i++) {
+    if (set.has(target - nums[i])) {
+      return true;
+    }
+    set.add(nums[i]);
+  }
+  return false;
+}
